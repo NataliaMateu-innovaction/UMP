@@ -16,7 +16,15 @@ La compilación está en `dist/client`. Se preserva la configuración de hosting
 
 `vercel.json` ya define la instalación (`npm ci`), la compilación (`npm run build`) y la carpeta publicada (`dist/client`), así que alcanza con importar el repositorio en Vercel sin tocar la configuración.
 
-Variables opcionales para compilar una versión con otros destinos (por ejemplo, la copia que se comparte como artifact de Claude): `VITE_APP_URL` (botones "Empezar ahora"), `VITE_TERMS_URL` y `VITE_DISCLAIMER_URL` (links legales). Sin definirlas, apuntan a la app en Railway.
+## Páginas del sitio
+
+- `/` — la landing (React).
+- `/app` — maqueta estática de la pantalla de ingreso de la app con el diseño nuevo (`public/app/index.html`). "Conectar wallet y firmar" todavía no hace nada: conectarla con la app real (https://apisix-production-e04e.up.railway.app/app) queda para más adelante.
+- `/legal/terms` y `/legal/disclaimer` — Términos y Condiciones y Descargo de responsabilidad con el diseño nuevo y el mismo texto que la app (`public/legal/*/index.html`). La privacidad es la sección 19 de los Términos (`/legal/terms#privacy`).
+
+En `npm run dev` esas rutas muestran la landing; abrilas como `/app/index.html`, `/legal/terms/index.html`, etc. En la compilación y en Vercel funcionan con su dirección normal.
+
+Variables opcionales para compilar con otros destinos (por ejemplo, la copia que se comparte como artifact de Claude): `VITE_APP_URL` (botones "Empezar ahora"), `VITE_TERMS_URL` y `VITE_DISCLAIMER_URL` (links legales). Sin definirlas, apuntan a `/app`, `/legal/terms` y `/legal/disclaimer`.
 
 ## Alcance
 

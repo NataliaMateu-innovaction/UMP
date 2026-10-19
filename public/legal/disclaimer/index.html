@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Descargo de responsabilidad · USDC Massive Payments</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap">
+<style>
+/* Legal page in the landing's visual system: graphite ground, lime accent, Inter; sticky contents on wide screens. */
+:root{--bg:#0b1012;--surface:#101719;--line:#303a3e;--soft-line:#1c2427;--text:#f6f7f5;--body:#c3c9cb;--muted:#a5acaf;--lime:#d1ff52;--lime-ink:#dcfa9c;--font:"Inter",Arial,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 var(--font);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.gutter{width:min(1240px,100%);margin-inline:auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;border-bottom:1px solid var(--line);background:rgba(11,16,18,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.bar{height:84px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:20px;text-decoration:none}
+.brand img{width:80px;height:48px;object-fit:contain}
+.brand span{border-left:1px solid var(--line);padding-left:18px;font-size:14px;letter-spacing:-.3px}
+.lang{display:inline-flex;align-items:center;gap:10px;height:40px;padding:0 14px;border:1px solid var(--line);border-radius:10px;background:none;color:#c9cdcf;font:inherit;font-size:14px;cursor:default}
+.lang svg{width:16px;height:16px}
+.intro{position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid var(--line);padding-block:64px 40px}
+.intro::before{content:"";position:absolute;inset:-30% -10%;z-index:-1;pointer-events:none;background:radial-gradient(36% 70% at 12% 90%,rgba(150,235,95,.1),transparent 70%),radial-gradient(40% 80% at 88% 10%,rgba(38,166,140,.18),transparent 72%)}
+.eyebrow{display:block;color:var(--lime);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+h1{margin:0;font-size:clamp(38px,5.4vw,64px);line-height:1.04;font-weight:750;letter-spacing:-2px;text-wrap:balance}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:22px}
+.version{display:inline-flex;align-items:center;gap:9px;border:1px solid #4b5557;border-radius:30px;padding:6px 13px;font-size:13px;font-weight:500;color:var(--lime-ink)}
+.version i{width:8px;height:8px;border-radius:50%;background:var(--lime)}
+.note{display:flex;gap:10px;align-items:flex-start;margin:0;font-size:13px;line-height:1.55;color:var(--muted);max-width:620px}
+.note svg{flex-shrink:0;width:16px;height:16px;margin-top:2px;color:var(--lime)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
+.tabs a{text-decoration:none;font-size:14px;padding:9px 16px;border-radius:30px;border:1px solid var(--line);color:#c9cdcf;transition:border-color .2s,color .2s,background .2s}
+.tabs a:hover{border-color:var(--lime);color:var(--lime)}
+.tabs a[aria-current="page"]{background:var(--lime);border-color:var(--lime);color:var(--bg);font-weight:600}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:72px;padding-block:56px 96px}
+.toc{position:sticky;top:120px;align-self:start;max-height:calc(100vh - 150px);overflow:auto;padding-right:6px;scrollbar-width:thin;scrollbar-color:#2c3537 transparent}
+.toc-title{display:block;color:var(--lime);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc;display:grid;gap:2px}
+.toc li{counter-increment:toc}
+.toc a{display:flex;gap:10px;text-decoration:none;font-size:13px;line-height:1.45;color:var(--muted);padding:7px 10px;border-left:2px solid var(--soft-line);transition:color .2s,border-color .2s,background .2s}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:#6f7b7f;font-variant-numeric:tabular-nums;flex-shrink:0}
+.toc a:hover{color:var(--text)}
+.toc a.active{color:var(--text);border-left-color:var(--lime);background:rgba(209,255,82,.05)}
+.toc a.active::before{color:var(--lime)}
+.doc{max-width:720px;color:var(--body);font-size:16px;line-height:1.75}
+.doc>p:first-child{font-size:18px;line-height:1.7;color:#d6dbdc}
+.doc section{scroll-margin-top:120px;padding-top:36px;margin-top:36px;border-top:1px solid var(--soft-line)}
+.doc h2{margin:0 0 14px;color:var(--text);font-size:22px;line-height:1.3;font-weight:700;letter-spacing:-.4px;text-wrap:balance}
+.doc h2 .num{color:var(--lime);font-variant-numeric:tabular-nums}
+.doc p{margin:0 0 14px}
+.doc ul,.doc ol{margin:0 0 16px;padding-left:22px}
+.doc li{margin-bottom:8px}
+.doc li::marker{color:var(--lime)}
+.doc a{color:var(--lime-ink);text-decoration:underline;text-decoration-color:rgba(220,250,156,.35);text-underline-offset:3px;overflow-wrap:anywhere}
+.doc a:hover{text-decoration-color:var(--lime)}
+.doc>p:last-child{margin-top:40px;padding-top:24px;border-top:1px solid var(--soft-line);font-size:14px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding-block:30px max(30px,env(safe-area-inset-bottom,0px))}
+.foot{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;font-size:13px;color:#b0babc}
+.foot .by{display:flex;align-items:center;gap:6px;color:var(--muted)}
+.foot .by strong{color:var(--text);font-weight:500}
+.foot .by svg{width:14px;height:14px}
+.foot nav{display:flex;flex-wrap:wrap;gap:12px 24px}
+.foot nav a{text-decoration:none}
+.foot nav a:hover{color:var(--lime)}
+.foot .pill{margin-left:auto;border:1px solid #4b5557;border-radius:30px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--lime-ink);white-space:nowrap}
+.disclaimer{margin:20px 0 0;padding-top:20px;border-top:1px solid var(--line);font-size:12px;line-height:1.6;color:var(--muted)}
+.to-top{position:fixed;right:calc(24px + env(safe-area-inset-right,0px));bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:6;width:40px;height:40px;display:grid;place-items:center;border:1px solid #414e53;border-radius:50%;background:rgba(16,23,25,.88);color:var(--lime);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s,background .2s,color .2s;text-decoration:none}
+.to-top.visible{opacity:1;visibility:visible;transform:none}
+.to-top:hover{background:var(--lime);color:var(--bg)}
+.to-top svg{width:18px;height:18px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--lime);outline-offset:4px}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:28px;padding-block:32px 72px}
+  .toc{position:static;max-height:none;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+}
+@media(max-width:600px){
+  .bar{height:72px}
+  .brand img{width:66px;height:40px}
+  .brand span{display:none}
+  .intro{padding-block:40px 28px}
+  h1{letter-spacing:-1.2px}
+  .doc{font-size:15px}
+  .doc>p:first-child{font-size:16px}
+  .doc h2{font-size:19px}
+  .foot .pill{margin-left:0}
+  .to-top{right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="gutter bar">
+    <a class="brand" href="/" aria-label="USDC Massive Payments, volver a la landing"><img src="/assets/ump.png" alt="UMP" width="92" height="55"><span>USDC Massive Payments</span></a>
+    <button class="lang" type="button" aria-label="Idioma">Español <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+  </div>
+</header>
+<section class="intro" id="top">
+  <div class="gutter">
+    <span class="eyebrow">Legal</span>
+    <h1>Descargo de responsabilidad</h1>
+    <div class="meta"><span class="version"><i aria-hidden="true"></i>Versión 1.0 — vigente desde el 2026-10-18</span><p class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span>Esta traducción se ofrece solo por conveniencia. En caso de conflicto, prevalece la versión en inglés.</span></p></div>
+    <nav class="tabs" aria-label="Documentos legales"><a href="/legal/terms">Términos y Condiciones</a><a href="/legal/terms#privacy">Privacidad</a><a href="/legal/disclaimer" aria-current="page">Descargo de responsabilidad</a></nav>
+  </div>
+</section>
+<div class="gutter layout">
+  <nav class="toc" aria-label="Contenido"><span class="toc-title">Contenido</span><ol><li><a href="#software-only">Únicamente una herramienta de software; no constituye asesoramiento financiero</a></li><li><a href="#non-custodial">No custodio</a></li><li><a href="#funds">Sin responsabilidad por el origen ni el destino de los fondos</a></li><li><a href="#irreversible">Transacciones irreversibles</a></li><li><a href="#prohibited">Uso delictivo prohibido y denunciable</a></li><li><a href="#third-parties">Terceros y riesgos de la blockchain</a></li><li><a href="#testnet">Testnet</a></li><li><a href="#trademarks">Marcas</a></li><li><a href="#as-is">Tal cual</a></li></ol></nav>
+  <article class="doc"><p>USDC Massive Payments (el «Servicio») es un software operado por Innovaction LLC, una sociedad de responsabilidad limitada constituida en Delaware («DApps Factory» es una marca de Innovaction LLC). Al utilizar el Servicio, usted reconoce y acepta este Descargo de responsabilidad, que forma parte de los Términos y Condiciones.</p><section id="software-only"><h2 id="software-only-h"><span class="num">1.</span> Únicamente una herramienta de software; no constituye asesoramiento financiero</h2><p>El Servicio es una herramienta de software. Innovaction LLC no es un banco, una entidad de pago, un transmisor de dinero, un intermediario (broker), una plataforma de intercambio (exchange), un agente de depósito en garantía (escrow) ni un custodio, y no presta asesoramiento financiero, de inversiones, legal, fiscal ni contable. Nada de lo contenido en el Servicio constituye una recomendación ni una oferta de producto financiero alguno.</p></section><section id="non-custodial"><h2 id="non-custodial-h"><span class="num">2.</span> No custodio</h2><p>En ningún caso mantenemos, controlamos ni podemos mover sus fondos, y nunca tenemos sus claves privadas. Cada pago requiere una autorización que usted firma con su propia wallet. Usted es el único responsable de la seguridad de su wallet y de sus claves.</p></section><section id="funds"><h2 id="funds-h"><span class="num">3.</span> Sin responsabilidad por el origen ni el destino de los fondos</h2><p>Usted es el único responsable del origen lícito de sus fondos, de la identidad y selección de sus destinatarios, de la finalidad de cada pago, de la exactitud de las direcciones y los importes, y de sus obligaciones en materia de AML/CFT (PLD/FT), KYC, sanciones, impuestos y relaciones laborales. No verificamos a los destinatarios ni la finalidad de los pagos, y no somos parte en sus relaciones con ellos.</p></section><section id="irreversible"><h2 id="irreversible-h"><span class="num">4.</span> Transacciones irreversibles</h2><p>Las transacciones en blockchain son definitivas y no podemos cancelarlas, revertirlas ni reembolsarlas. Los pagos enviados a una dirección errónea o por un importe equivocado pueden perderse para siempre. Las comisiones y las tarifas de red no son reembolsables.</p></section><section id="prohibited"><h2 id="prohibited-h"><span class="num">5.</span> Uso delictivo prohibido y denunciable</h2><p>Está estrictamente prohibido utilizar el Servicio para fraudes, estafas, lavado de dinero, financiación del terrorismo, evasión de sanciones, el producto de robos o ransomware, bienes ilícitos, transmisión de dinero sin licencia, manipulación del mercado o cualquier otra actividad delictiva. Podemos bloquear o suspender el acceso, comunicar actividades sospechosas a las autoridades competentes y cooperar con las fuerzas del orden.</p></section><section id="third-parties"><h2 id="third-parties-h"><span class="num">6.</span> Terceros y riesgos de la blockchain</h2><p>La red Arc, USDC y su emisora Circle, los proveedores de RPC, las wallets y otros terceros están fuera de nuestro control. No somos responsables de sus fallos, decisiones o pérdidas, ni de errores en los contratos inteligentes, bifurcaciones (forks) o congestión de la red, la pérdida de la paridad de USDC o la pérdida de sus claves.</p></section><section id="testnet"><h2 id="testnet-h"><span class="num">7.</span> Testnet</h2><p>En la testnet de Arc, el Servicio se ofrece únicamente con fines de prueba: los tokens de testnet no tienen valor y pueden restablecerse en cualquier momento.</p></section><section id="trademarks"><h2 id="trademarks-h"><span class="num">8.</span> Marcas</h2><p>USDC es una marca registrada de Circle Internet Financial, LLC. Arc es una red de Circle. Su uso es meramente descriptivo y no implica afiliación con Circle ni respaldo alguno por su parte.</p></section><section id="as-is"><h2 id="as-is-h"><span class="num">9.</span> Tal cual</h2><p>EL SERVICIO SE PRESTA «TAL CUAL» Y «SEGÚN DISPONIBILIDAD», SIN GARANTÍAS DE NINGÚN TIPO. EN LA MÁXIMA MEDIDA PERMITIDA POR LA LEY, INNOVACTION LLC NO ES RESPONSABLE DE NINGUNA PÉRDIDA DERIVADA DE SU USO, CONFORME A LO ESTABLECIDO EN LOS TÉRMINOS Y CONDICIONES. En caso de conflicto entre una traducción y la versión en inglés, prevalecerá la versión en inglés.</p></section><p>Operado por Innovaction LLC (DApps Factory).</p><a href="/">Volver al inicio</a></article>
+</div>
+<footer>
+  <div class="gutter">
+    <div class="foot">
+      <span class="by">Powered by <strong>DApps Factory</strong> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+      <nav aria-label="Enlaces del sitio"><a href="/">Inicio</a><a href="/legal/terms">Términos y Condiciones</a><a href="/legal/disclaimer">Descargo de responsabilidad</a></nav>
+      <span class="pill">Testnet</span>
+    </div>
+    <p class="disclaimer">USDC es una marca registrada de Circle Internet Financial, LLC. USDC Massive Payments es una herramienta independiente, no afiliada ni respaldada por Circle. Arc es una red de Circle.</p>
+  </div>
+</footer>
+<a class="to-top" href="#top" aria-label="Volver arriba"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
+<script>
+// Highlight the section being read in the contents list, and show the back-to-top arrow after the intro.
+(() => {
+  const links = new Map([...document.querySelectorAll('.toc a')].map(a => [a.getAttribute('href').slice(1), a]));
+  const io = new IntersectionObserver(entries => {
+    for (const e of entries) if (e.isIntersecting) { links.forEach(a => a.classList.remove('active')); links.get(e.target.id)?.classList.add('active'); }
+  }, { rootMargin: '-120px 0px -65% 0px' });
+  document.querySelectorAll('.doc section[id]').forEach(s => io.observe(s));
+  const top = document.querySelector('.to-top');
+  const onScroll = () => top.classList.toggle('visible', window.scrollY > 600);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+})();
+</script>
+</body>
+</html>

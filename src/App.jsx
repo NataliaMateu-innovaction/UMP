@@ -6,11 +6,12 @@ import { CountUp } from './CountUp.jsx';
 import { Journey } from './Journey.jsx';
 import { CodeTerminal } from './CodeTerminal.jsx';
 import { SecurityReport } from './SecurityReport.jsx';
-const ORIGIN = 'https://apisix-production-e04e.up.railway.app';
 const A = `${import.meta.env.BASE_URL}assets/`;
-const APP = import.meta.env.VITE_APP_URL || `${ORIGIN}/app`;
-const TERMS = import.meta.env.VITE_TERMS_URL || `${ORIGIN}/legal/terms`;
-const DISCLAIMER = import.meta.env.VITE_DISCLAIMER_URL || `${ORIGIN}/legal/disclaimer`;
+// The start buttons and legal links go to the redesigned pages in public/ (app sign-in mockup and legal texts).
+// The real app lives at https://apisix-production-e04e.up.railway.app; wiring it in is a later step.
+const APP = import.meta.env.VITE_APP_URL || '/app';
+const TERMS = import.meta.env.VITE_TERMS_URL || '/legal/terms';
+const DISCLAIMER = import.meta.env.VITE_DISCLAIMER_URL || '/legal/disclaimer';
 const DOCS = 'https://github.com/DApps-Factory/-ARC-NextGenPayments/blob/mvp/apps/backend/README.md';
 const steps = [
  [Wallet,'Conectá tu wallet','MetaMask, Ledger o cualquier wallet EIP-⁠1193. Tu wallet es tu cuenta.'],

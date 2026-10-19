@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ingresar · USDC Massive Payments</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap">
+<style>
+/* Static design of the app's sign-in screen in the landing's visual system: graphite ground, lime accent, Inter. Nothing here is wired up. */
+:root{
+  --bg:#0b1012; --surface:#101719; --line:#303a3e; --soft-line:#1c2427;
+  --text:#f6f7f5; --muted:#a5acaf; --lime:#d1ff52; --lime-ink:#dcfa9c;
+  --font:"Inter",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--text);font:16px/1.5 var(--font);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,select{font:inherit}
+.gutter{width:min(1240px,100%);margin-inline:auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;border-bottom:1px solid var(--line);background:rgba(11,16,18,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.bar{height:84px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:20px}
+.brand img{width:80px;height:48px;object-fit:contain}
+.brand span{border-left:1px solid var(--line);padding-left:18px;font-size:14px;letter-spacing:-.3px}
+.lang{display:inline-flex;align-items:center;gap:10px;height:40px;padding:0 14px;border:1px solid var(--line);border-radius:10px;background:none;color:#c9cdcf;font-size:14px;cursor:default}
+.lang svg{width:16px;height:16px}
+
+main{position:relative;isolation:isolate;flex:1;display:grid;place-items:center;padding-block:72px 88px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow:hidden}
+main::before{content:"";position:absolute;inset:-20% -10%;z-index:-2;pointer-events:none;background:radial-gradient(38% 52% at 18% 80%,rgba(150,235,95,.12),transparent 70%),radial-gradient(40% 56% at 84% 18%,rgba(38,166,140,.2),transparent 72%);animation:drift 18s ease-in-out infinite alternate}
+main::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(var(--soft-line) 1px,transparent 1px),linear-gradient(90deg,var(--soft-line) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(60% 55% at 50% 45%,#000 10%,transparent 75%);mask-image:radial-gradient(60% 55% at 50% 45%,#000 10%,transparent 75%);opacity:.55}
+@keyframes drift{from{transform:translate3d(-3%,2%,0)}to{transform:translate3d(3%,-2%,0) scale(1.05)}}
+
+.card{width:min(480px,100%);background:rgba(16,23,25,.92);border:1px solid var(--line);border-radius:20px;padding:40px 40px 30px;box-shadow:0 40px 90px -40px rgba(0,0,0,.85);display:flex;flex-direction:column;align-items:center;text-align:center}
+.testnet{display:inline-flex;align-items:center;gap:9px;border:1px solid #4b5557;border-radius:30px;padding:7px 13px;font-size:13px;font-weight:500;color:var(--lime-ink)}
+.testnet i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(209,255,82,.14)}
+h1{margin:22px 0 12px;font-size:44px;line-height:1.05;font-weight:750;letter-spacing:-1.6px;text-wrap:balance}
+.lead{margin:0;max-width:360px;color:#c0c4c6;font-size:16px;line-height:1.6;text-wrap:balance}
+.cta{margin-top:28px;width:100%;min-height:56px;display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:10px;background:var(--lime);color:var(--bg);font-size:16px;font-weight:650;cursor:pointer;transition:background .2s,transform .2s}
+.cta:hover{background:#e2ff92;transform:translateY(-2px)}
+.cta:focus-visible,.lang:focus-visible{outline:2px solid var(--lime);outline-offset:4px}
+.cta svg{width:20px;height:20px}
+.network{margin:14px 0 0;font-size:13px;color:var(--muted)}
+.network b{color:var(--text);font-weight:600}
+.points{list-style:none;margin:28px 0 0;padding:24px 0 0;border-top:1px solid var(--soft-line);display:grid;gap:18px;text-align:left;width:100%}
+.points li{display:flex;gap:14px;align-items:flex-start;font-size:14px;line-height:1.6;color:var(--muted)}
+.points b{color:var(--text);font-weight:600}
+.check{flex-shrink:0;width:26px;height:26px;margin-top:-1px;border-radius:50%;display:grid;place-items:center;color:var(--lime);background:rgba(209,255,82,.12);border:1px solid rgba(209,255,82,.35)}
+.check svg{width:14px;height:14px}
+.legal{margin-top:26px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;font-size:13px;color:#8d989b}.legal a,.foot nav a{text-decoration:none;transition:color .2s}.legal a:hover,.foot nav a:hover{color:var(--lime)}
+
+footer{border-top:1px solid var(--line);padding-block:30px max(30px,env(safe-area-inset-bottom,0px))}
+.foot{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;font-size:13px;color:#b0babc}
+.foot .by{display:flex;align-items:center;gap:6px;color:var(--muted)}
+.foot .by strong{color:var(--text);font-weight:500}
+.foot .by svg{width:14px;height:14px}
+.foot nav{display:flex;flex-wrap:wrap;gap:12px 24px}
+.foot .pill{margin-left:auto;border:1px solid #4b5557;border-radius:30px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--lime-ink);white-space:nowrap}
+.disclaimer{margin:20px 0 0;padding-top:20px;border-top:1px solid var(--line);font-size:12px;line-height:1.6;color:var(--muted);max-width:none}
+
+@media(max-width:600px){
+  .bar{height:72px}
+  .brand img{width:66px;height:40px}
+  .brand span{display:none}
+  main{padding-block:40px 56px}
+  .card{padding:30px 22px 24px;border-radius:18px}
+  h1{font-size:36px}
+  .foot .pill{margin-left:0}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="gutter bar">
+    <a class="brand" href="/" aria-label="USDC Massive Payments, volver a la landing"><img src="/assets/ump.png" alt="UMP" width="92" height="55"><span>USDC Massive Payments</span></a>
+    <button class="lang" type="button" aria-label="Idioma">Español <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="card" aria-labelledby="signin-title">
+    <span class="testnet"><i aria-hidden="true"></i>Disponible en Arc Testnet</span>
+    <h1 id="signin-title">Ingresar</h1>
+    <p class="lead">Conectá tu wallet y firmá un mensaje para ingresar. No se pide ni se guarda ninguna clave privada.</p>
+    <button class="cta" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7a2 2 0 0 1 2-2h11v3"/><rect x="4" y="8" width="16" height="11" rx="2"/><path d="M16 13.5h1.5"/></svg>
+      Conectar wallet y firmar
+    </button>
+    <p class="network">Red: <b>Arc Testnet</b></p>
+    <ul class="points">
+      <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><span><b>¿Ustedes custodian mis fondos?</b> No. Los USDC quedan en tu wallet, y el contrato solo puede mover lo que autorizaste con tu firma, pago por pago.</span></li>
+      <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.4-7 10-4-1.6-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span><b>EIP-712 y Merkle</b> Firmás datos legibles, y un árbol Merkle ata cada pago a esa única firma.</span></li>
+      <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><b>Verificación en el navegador</b> Antes de firmar, tu navegador recalcula el lote y lo compara con lo que vas a firmar.</span></li>
+    </ul>
+    <div class="legal"><a href="/legal/terms">Términos y Condiciones</a><a href="/legal/disclaimer">Descargo de responsabilidad</a></div>
+  </section>
+</main>
+
+<footer>
+  <div class="gutter">
+    <div class="foot">
+      <span class="by">Powered by <strong>DApps Factory</strong> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+      <nav aria-label="Enlaces del sitio"><span>GitHub</span><span>Documentación</span><span>Contacto</span><a href="/legal/terms">Términos y Condiciones</a><a href="/legal/disclaimer">Descargo de responsabilidad</a></nav>
+      <span class="pill">Testnet</span>
+    </div>
+    <p class="disclaimer">USDC es una marca registrada de Circle Internet Financial, LLC. USDC Massive Payments es una herramienta independiente, no afiliada ni respaldada por Circle. Arc es una red de Circle.</p>
+  </div>
+</footer>
+</body>
+</html>
