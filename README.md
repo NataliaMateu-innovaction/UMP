@@ -33,7 +33,7 @@ Variables opcionales para compilar una versión con otros destinos (por ejemplo,
 - `public/assets/hero-layers/`: capas para animar el hero (`src/HeroMotion.jsx`), recortadas de `hero.png`: `plate.webp` es la ilustración sin tarjetas y `card-*`/`ghost-*` son los comprobantes y las tarjetas del fondo, cada uno por separado (64 KB en total). Si cambia la ilustración, hay que volver a recortarlas y a calcar las rutas de `HeroMotion.jsx`.
 - `public/assets/ump.png`: extracción del logotipo de la propuesta elegida. Es un raster de 92×55 y se ve algo borroso en pantallas retina; conviene reemplazarlo por el SVG original de la marca.
 - `public/assets/favicon.png`: favicon armado con el logotipo.
-- `public/assets/og.jpg`: imagen de 1200×630 para compartir en redes. `og:image` usa una ruta relativa: cuando haya dominio definitivo, cambiarla por la URL absoluta en `index.html`.
+- `public/assets/og.jpg`: imagen de 1200×630 para compartir en redes. `og:image` y `og:url` en `index.html` apuntan a https://ump-dusky.vercel.app; si se conecta un dominio propio, hay que cambiarlos.
 - Inter variable alojada localmente mediante Fontsource; iconos Phosphor.
 - Referencia: `C:/Users/Admin/.codex/generated_images/01a154d7-1716-77a0-aa36-6cfa9cb9e04c/exec-a83c4266-79d9-4e9c-a2e3-0155accef135.png`.
 
